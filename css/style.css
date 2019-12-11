@@ -1,0 +1,144 @@
+html {
+  background-color: #000000;
+  font-family: 'Gotham Book';
+  src: url('fonts/Gotham-Book.otf') format('opentype');
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham-Bold.otf') format('opentype');
+  color: white;
+}
+
+button {
+  background-color: #d7bf40;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Gotham Bold';
+}
+
+.restart{
+  background-color: #2b89c9;
+}
+
+
+#ButtonFourStop,
+#ButtonFourStop2,
+#ButtonFiveStop,
+#ButtonFiveStop2,
+#ButtonSixStop,
+#ButtonSixStop2 {
+  background-color: #B50089;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Gotham Bold';
+}
+
+div {
+  font-family: 'Gotham Medium', sans-serif;
+  src: url('fonts/Gotham-Medium.otf') format('opentype');
+  color: white;
+  font-size: 16px;
+}
+
+#container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 16px;
+  font-family: 'Gotham Book', sans-serif;
+}
+
+.bold {
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham-Bold.otf') format('opentype');
+}
+.medium {
+  font-family: 'Gotham Medium';
+  src: url('fonts/Gotham-Medium.otf') format('opentype');
+}
+
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alert {
+  padding: 2px;
+  background-color: red;
+  color: white;
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham-Bold.otf') format('opentype');
+}
+
+.goodalert {
+  padding: 2px;
+  background-color: green;
+  color: white;
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham-Bold.otf') format('opentype');
+}
+
+.health-box {
+  background-color: #ccc;
+  height: 30px;
+  width: 400px;
+  margin: 0 auto;
+  border: solid 1px #aaa;
+}
+
+.health-bar {
+  background-color: #007f00;
+  width: inherit;
+  height: 28px;
+  position: relative;
+  bottom: 56px;
+}
+
+.health-bar-red {
+  width: 100%;
+  height: 28px;
+  background-color: #cc0000;
+}
+
+.health-bar-blue {
+  width: 100%;
+  height: 28px;
+  background-color: #3bd3df;
+  bottom: 29px;
+  position: relative;
+}
+
+.health-bar-text {
+  position: relative;
+  bottom: 80px;
+  color:white;
+}
+
+#health {
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 20px;
+  left:0;
+  width: 100%;
+  background-color: #333;
+}
+
+#health-heading{
+  color:white;
+}

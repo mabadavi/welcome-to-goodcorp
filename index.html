@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodcorp Employee Login</title>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/p5.js"></script>
+    <script src="js/p5.sound.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/sketch.js"></script>
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <audio id="audio">
+      <source src="sound-help.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="container">
+    <img src="goodcorp.gif" />
+    <br /><br />
+    <p id="welcome">Welcome, <span id="bizname"></span> (<span id="title">Manager</span>).</p>
+
+
+    <div id="first">
+      <h3>Employee login:</h3>
+      <textarea name="name" id="name" cols="20" rows="2"></textarea>
+      <br /><br />
+      <button onclick="submitAnswer();playSound();" id="ButtonOne">Login</button>
+    </div>
+
+    <div id="second">
+      <button id="ButtonTwo">Start Work</button>
+    </div>
+
+    <div id="third">
+      <p>Temperatures are on the rise due to the number of carbon emissions the company produces. Air quality is getting worse and storms are more severe.</p>
+      <p>The company is one of the top ten most profitable in the world.</p>
+      <button id="ButtonThree" class="add-damage">Keep Working</button>
+    </div>
+
+    <div id="fourth">
+      <p>Temperatures get hotter and animals and plants start to die out. People are getting sick due to poor air quality and lack of heat control.</p>
+      <p>The company merges with another tech giant and has a monopoly over all production.</p>
+      <p class="alert">Alert: the public has asked you to stop working, citing health concerns.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonFour" class="add-damage">Keep Working</button>
+      <button id="ButtonFourStop" class="add-heal">Stop Working</button>
+    </div>
+
+    <div id="fourthStop">
+      <p style="color:#666;">Temperatures get hotter and animals and plants start to die out. People are getting sick due to poor air quality and lack of heat control.</p>
+      <p style="color:#666;">The company merges with another tech giant and has a monopoly over all production.</p>
+      <p class="alert">Alert: you have received a warning from Human Resources.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonFourStop1" class="add-damage">Start Working</button>
+      <button id="ButtonFourStop2" class="add-heal">File a Complaint</button>
+    </div>
+
+
+    <div id="fourthStopComplaint1">
+      <p style="color:#666;">Temperatures get hotter and animals and plants start to die out. People are getting sick due to poor air quality and lack of heat control.</p>
+      <p style="color:#666;">The company merges with another tech giant and has a monopoly over all production.</p>
+      Computers made: 10,843<br />
+      Items shipped: 408,594</p>
+      <p class="alert goodalert">Due to worker walkouts and mounting public pressure, GoodCorp will change its politics to reduce its environmental impact.</p>
+      <button class="restart">Play again</button>
+    </div>
+
+
+    <div id="fifth">
+      <p>There is a massive tsunami. Thousands of people die.</p>
+      <p>The corporation makes billions selling disaster relief products.</p>
+      <p class="alert goodalert">Alert: you have received a salary increase.</p>
+      <p class="alert">Alert: the public is staging a citywide protest against GoodCorp, citing health concerns.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonFive" class="add-damage">Keep Working</button>
+      <button id="ButtonFiveStop" class="add-heal">Stop Working</button>
+    </div>
+
+    <div id="fifthStop">
+      <p style="color:#666;">There is a massive tsunami. Thousands of people die.</p>
+      <p style="color:#666;">The corporation makes billions selling disaster relief products.</p>
+      <p>Alert: you have received a warning from Human Resources.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonFiveStop1" class="add-damage">Start Working</button>
+      <button id="ButtonFiveStop2" class="add-heal">File a Complaint</button>
+    </div>
+
+    <div id="fifthStopComplaint1">
+      <p style="color:#666;">There is a massive tsunami. Thousands of people die.</p>
+      <p style="color:#666;">The corporation makes billions selling disaster relief products.</p>
+      <p class="alert goodalert">Due to worker walkouts and mounting public pressure, GoodCorp will change its politics to reduce its environmental impact.</p>
+      <button class="restart">Play again</button>
+    </div>
+
+
+    <div id="sixth">
+      <p>Climate disasters strike constantly and kill hundreds of thousands of people per year. Everyone knows it’s the corporation’s fault, but can do little about it.</p>
+      <p>The corporation continues to make trillions per year.</p>
+      <p class="alert goodalert">Alert: you have been promoted.</p>
+      <p class="alert">Alert: the public is starting to perish.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonSix" class="add-damage">Keep Working</button>
+      <button id="ButtonSixStop" class="add-heal">Stop Working</button>
+    </div>
+
+    <div id="sixthStop">
+      <p style="color:#666;">Climate disasters strike constantly and kill hundreds of thousands of people per year. Everyone knows it’s the corporation’s fault, but can do little about it.</p>
+      <p style="color:#666;">The corporation continues to make trillions per year.</p>
+      <p class="alert">Alert: you have received a warning from Human Resources.</p>
+      <p>What would you like to do?</p>
+      <button id="ButtonSixStop1" class="add-damage">Start Working</button>
+      <button id="ButtonSixStop2" class="add-heal">File a Complaint</button>
+    </div>
+
+
+    <div id="sixthStopComplaint1">
+      <p style="color:#666;">Climate disasters strike constantly and kill hundreds of thousands of people per year. Everyone knows it’s the corporation’s fault, but can do little about it.</p>
+      <p style="color:#666;">The corporation continues to make trillions per year.</p>
+      <p class="alert goodalert">Due to worker walkouts and mounting public pressure, GoodCorp will change its politics to reduce its environmental impact.</p>
+      <button class="restart">Play again</button>
+    </div>
+
+
+    <div id="seventh">
+      <p>A combination of wildfires, hurricanes, tornados, and tsunamis reach breaking point and destroy the entire planet. Everyone dies, including everyone working for the corporation.</p>
+      <p class="alert goodalert">Alert: GoodCorp has taken over the world.</p>
+      <p class="alert">Alert: the world has been destroyed due to environmental disaster.</p>
+      <button class="restart">Try again</button>
+    </div>
+
+    <div id="health">
+    <h4 id="health-heading">Consumer health</h4>
+    <div class="health-box">
+      <div class="health-bar-red"></div>
+      <div class="health-bar-blue"></div>
+      <div class="health-bar"></div>
+      <div class="health-bar-text"></div>
+    </div>
+  </div>
+
+  </div>
+</body>
+</html>
